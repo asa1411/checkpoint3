@@ -1,0 +1,32 @@
+@media (max-width: 999px) {
+  .boxcontainer {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+      "score score"
+      "display baker1"
+      "display baker2"
+      "display baker3";
+    background-color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 5px;
+  }
+  #score {
+    grid-area: score;
+  }
+  #display {
+    grid-area: display;
+  }
+
+  #baker1 {
+    grid-area: baker1;
+  }
+  #baker2 {
+    grid-area: baker2;
+  }
+  #baker3 {
+    grid-area: baker3;
+  }
+}
