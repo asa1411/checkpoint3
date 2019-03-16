@@ -1,32 +1,70 @@
-@media (max-width: 999px) {
-  .boxcontainer {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-areas:
-      "score score"
-      "display baker1"
-      "display baker2"
-      "display baker3";
-    background-color: aqua;
-    margin-left: auto;
-    margin-right: auto;
-    grid-gap: 5px;
-  }
-  #score {
-    grid-area: score;
-  }
-  #display {
-    grid-area: display;
-  }
+.boxcontainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+    "score score"
+    "display baker1"
+    "display baker2"
+    "display baker3";
+  /* background-color: aqua; */
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  /* align-content is placing content, no content, but elements in the vertical center of the document. */
+  height: 600px;
+  text-align: center;
+}
 
-  #baker1 {
-    grid-area: baker1;
-  }
-  #baker2 {
-    grid-area: baker2;
-  }
-  #baker3 {
-    grid-area: baker3;
-  }
+.box1 {
+  grid-area: score;
+  background-color: blueviolet;
+  /* height: 200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.box2 {
+  grid-area: display;
+  background-color: darkgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box3 {
+  grid-area: baker1;
+  background-color: #2e3035;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.box4 {
+  grid-area: baker2;
+  background-color: darkgoldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box5 {
+  grid-area: baker3;
+  background-color: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #2ccc59;
 }
