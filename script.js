@@ -1,16 +1,41 @@
+onclick = "btnClicked(1)";
 var score = 0;
-function btnClicked() {
-  score++;
+function btnClicked(number) {
+  score = score + number;
+
   document.getElementById("score").innerHTML = score;
-
-  return true;
 }
-function buy1() {
-  score = score - 5;
+onclick = "buySmallBaker()";
+var baker1 = 0;
+function buySmallBaker() {
+  // var smallBakerCost = Math.floor(10 * Math.pow(1.1, baker1));
+  var smallBakerCost;
+  if (score >= 10) {
+    baker1 = baker1 + 1;
+    score = score - 10;
+  }
+
+  document.getElementById("smallBakerNumber").innerHTML =
+    "popcorn maker(s): " + baker1;
+  document.getElementById("score").innerHTML = score1;
+}
+onclick = "buyMediumBaker()";
+var baker2 = 0;
+function buyMediumBaker() {
+  if (score >= 20) {
+    baker2 = baker2 + 2;
+    score = score - 20;
+  }
+  document.getElementById("mediumBakerNumber").innerHTML =
+    "popcorn maker(s): " + baker2 / 2;
   document.getElementById("score").innerHTML = score;
-  return true;
 }
+// var nextBakerCost = Math.floor(10 * Math.pow(1.1, baker1));
+// document.getElementById("mediumBakerNumber").innerHTML = baker1;
 
-var myscore = setInterval((score += 2), 1000);
-
-console.log(myscore);
+window.setInterval(function() {
+  btnClicked(baker1);
+}, 1000);
+window.setInterval(function() {
+  btnClicked(baker2);
+}, 1000);

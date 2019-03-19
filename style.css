@@ -69,7 +69,9 @@
   background-color: #2ccc59;
 }
 
-.box3 {
+.box3,
+.box4,
+.box5 {
   display: grid;
   grid-template-columns: 150px 150px;
   grid-template-rows: 125px 75px;
@@ -77,18 +79,27 @@
     "image buttonInteractive"
     "box3inner buttonInteractive";
 }
-.imageSmallBaker {
+.imageSmallBaker,
+.imageMediumBaker,
+.imageLargeBaker {
   grid-area: image;
   background-color: black;
 }
-.box3Interactive {
+.box3Interactive,
+.box4Interactive,
+.box5Interactive {
   list-style-type: none;
   grid-area: buttonInteractive;
   /* background-color: #40ef8c; */
   display: grid;
   grid-row-gap: 30px;
 }
-.box3Inner {
+.box3Inner,
+.box4Inner,
+.box5Inner {
   grid-area: box3inner;
   background-color: #cec627;
+}
+.baker1 {
+  color: black;
 }
