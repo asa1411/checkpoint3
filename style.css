@@ -1,18 +1,17 @@
 .boxcontainer {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 33% 33% 34%;
   grid-template-areas:
     "score score"
     "display baker1"
-    "display baker2"
-    "display baker3";
+    "display baker2";
   /* background-color: aqua; */
   margin-left: auto;
   margin-right: auto;
   align-content: center;
   /* align-content is placing content, no content, but elements in the vertical center of the document. */
-  height: 800px;
+  height: 1000px;
   text-align: center;
 }
 
@@ -49,13 +48,7 @@
   justify-content: center;
   align-items: center;
 }
-.box5 {
-  grid-area: baker3;
-  background-color: orangered;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .button1 {
   background-color: #4caf50;
   border: none;
@@ -70,24 +63,28 @@
 }
 
 .box3,
-.box4,
-.box5 {
+.box4 {
   display: grid;
-  grid-template-columns: 150px 150px;
-  grid-template-rows: 125px 75px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 175px 30px;
   grid-template-areas:
     "image buttonInteractive"
     "box3inner buttonInteractive";
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
-.imageSmallBaker,
-.imageMediumBaker,
-.imageLargeBaker {
+.imageSmallBaker {
   grid-area: image;
   background-color: black;
 }
+
+.imageMediumBaker {
+  grid-area: image;
+  background-color: white;
+}
 .box3Interactive,
-.box4Interactive,
-.box5Interactive {
+.box4Interactive {
   list-style-type: none;
   grid-area: buttonInteractive;
   /* background-color: #40ef8c; */
@@ -95,11 +92,73 @@
   grid-row-gap: 30px;
 }
 .box3Inner,
-.box4Inner,
-.box5Inner {
+.box4Inner {
   grid-area: box3inner;
   background-color: #cec627;
+  /* grid-row-gap: 30px; */
 }
 .baker1 {
   color: black;
+}
+@media only screen and (max-width: 600px) {
+  .boxcontainer {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+      "score score score"
+      " baker1 display baker2";
+    /* align-content is placing content, no content, but elements in the vertical center of the document. */
+    height: 400px;
+  }
+  .box3 {
+    grid-area: baker1;
+    background-image: url(popcorn1.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* color: black; */
+  }
+  .box4 {
+    grid-area: baker2;
+    background-image: url(popcorn2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageSmallBaker,
+  .imageMediumBaker {
+    display: none;
+  }
+
+  .box3,
+  .box4 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "buttonInteractive"
+      "boxinner";
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box3Interactive,
+  .box4Interactive {
+    list-style-type: none;
+    grid-area: buttonInteractive;
+    /* background-color: #40ef8c; */
+    display: grid;
+    grid-row-gap: 20px;
+  }
+  .box3Inner,
+  .box4Inner {
+    grid-area: boxinner;
+    background-color: #cec627;
+    /* grid-row-gap: 30px; */
+  }
 }
