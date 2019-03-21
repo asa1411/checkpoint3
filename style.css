@@ -1,17 +1,18 @@
 .boxcontainer {
+  max-width: 999px;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 33% 33% 34%;
+  grid-template-rows: 20% 40% 40%;
   grid-template-areas:
     "score score"
-    "display baker1"
-    "display baker2";
-  /* background-color: aqua; */
+    "popcorn baker1"
+    "popcorn baker2";
+
   margin-left: auto;
   margin-right: auto;
   align-content: center;
   /* align-content is placing content, no content, but elements in the vertical center of the document. */
-  height: 1000px;
+  height: 800px;
   text-align: center;
 }
 
@@ -23,23 +24,24 @@
   justify-content: center;
   align-items: center;
   font-size: 50px;
+  color: white;
 }
 
 .box2 {
-  grid-area: display;
-  background-color: darkgreen;
+  grid-area: popcorn;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(Popcorn-Machine-4-wheel-600x753.jpg);
 }
 
 .box3 {
   grid-area: baker1;
-  /* background-color: #2e3035; */
+  background-color: #2e3035;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  /* color: white; */
 }
 .box4 {
   grid-area: baker2;
@@ -49,14 +51,13 @@
   align-items: center;
 }
 
-.button1 {
-  background-color: #4caf50;
+.box2 button {
+  cursor: pointer;
   border: none;
   color: white;
-  padding: 15px 25px;
+  padding: 15px 35px;
   text-align: center;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 20px;
 }
 #button1:hover {
   background-color: #2ccc59;
@@ -100,6 +101,7 @@
 .baker1 {
   color: black;
 }
+
 @media only screen and (max-width: 600px) {
   .boxcontainer {
     display: grid;
@@ -107,10 +109,11 @@
     grid-template-rows: 20% 80%;
     grid-template-areas:
       "score score score"
-      " baker1 display baker2";
+      " baker1 popcorn baker2";
     /* align-content is placing content, no content, but elements in the vertical center of the document. */
     height: 400px;
   }
+
   .box3 {
     grid-area: baker1;
     background-image: url(popcorn1.jpg);
